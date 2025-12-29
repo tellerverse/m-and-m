@@ -1,8 +1,9 @@
-import { db } from "../firebasedata.js";
+import { db } from "./firebasedata.js";
+import { ref, get, onValue } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-database.js";
 
 // 🔧 HIER ANPASSEN
-snap = await get(db, ref(db, 'dates'));
-dates = snap.val();
+let snap = await get(ref(db, 'dates'));
+let dates = snap.val();
 
 const start = new Date(dates.start);
 const end = new Date(dates.end);
