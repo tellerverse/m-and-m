@@ -1,6 +1,11 @@
+import { db } from "../firebasedata.js";
+
 // 🔧 HIER ANPASSEN
-const start = new Date("2025-12-01");
-const end = new Date("2026-04-01");
+snap = await get(db, ref(db, 'dates'));
+dates = snap.val();
+
+const start = new Date(dates.start);
+const end = new Date(dates.end);
 
 const today = new Date();
 today.setHours(0,0,0,0);
