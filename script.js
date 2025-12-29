@@ -42,6 +42,12 @@ document.getElementById("endDate").textContent = end.toLocaleDateString("de-DE")
 document.getElementById("daysTotal").textContent = totalDays;
 document.getElementById("daysPassed").textContent = passedDays;
 document.getElementById("daysLeft").textContent = leftDays;
+document.getElementById("addEntry").style.background = `linear-gradient(90deg, ${dates.color}, ${lightenColor(dates.color, 80)})`;
+const statsDivs = document.getElementsByClassName("stats")[0].children; // die inneren divs
+
+for (let div of statsDivs) {
+  div.style.background = `linear-gradient(90deg, ${dates.color}, ${lightenColor(dates.color, 80)})`;
+}
 
 const progressEl = document.getElementById("progress");
 progressEl.style.width = progress + "%";

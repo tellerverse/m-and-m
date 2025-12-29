@@ -63,14 +63,14 @@ h1 {
   width: 30%;
 }
 
-button {
+#addEntry {
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 12px;
   background: #ff4d6d;
   color: white;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
 }
 
