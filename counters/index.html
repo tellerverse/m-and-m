@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Progress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1 id="caption">Auslandsjahr</h1>
+
+  <div class="dates">
+    <div><span>start </span><strong id="startDate"></strong></div>
+    <div><span>heute </span><strong id="todayDate"></strong></div>
+    <div><span>ende </span><strong id="endDate"></strong></div>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+  <div id="progressText"></div>
+
+  <div class="stats">
+    <div><strong id="daysPassed"></strong><span><br>geschafft</span></div>
+    <div><strong id="daysLeft"></strong><span><br>übrig</span></div>
+    <div><strong id="daysTotal"></strong><span><br>gesamt</span></div>
+  </div>
+  <div class="buttons">
+    <button id="addEntry">➕</button>
+    <button id="shareLink">🔗</button>
+    <button id="activateNotif">🔔</button>
+  </div>
+  <div id="formOverlay" class="hidden">
+    <div class="form">
+      <h3>neuer counter</h3>
+
+      <input type="date" id="fStart" placeholder="start">
+      <input type="date" id="fEnd" placeholder="ende">
+      <input type="text" id="fCaption" placeholder="titel">
+      <input type="color" id="fColor" placeholder="farbe">
+
+      <button id="saveEntry" style="background: rgb(128, 255, 128)">speichern</button>
+      <button id="cancelEntry" style="background: rgb(255, 128, 128)">abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
