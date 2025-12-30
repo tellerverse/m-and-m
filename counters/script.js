@@ -74,7 +74,7 @@ function captionToKey(caption) {
   return caption
     .trim()
     .toLowerCase()
-    .replace(/\s+/g, "_")        // Leerzeichen → Unterstrich
+    .replace(/\s+/g, "")        // Leerzeichen → Unterstrich
     .replace(/[ä]/g, "ae")
     .replace(/[ö]/g, "oe")
     .replace(/[ü]/g, "ue")
