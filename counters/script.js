@@ -117,3 +117,30 @@ function darkenColor(hex, amount = 60) {
   let b = parseInt(hex.slice(4,6), 16);
   return `rgb(${Math.max(0,r-amount)},${Math.max(0,g-amount)},${Math.max(0,b-amount)})`;
 }
+document.getElementById("shareBtn").onclick = async () => {
+  const target = document.querySelector(".container");
+
+  const canvas = await html2canvas(target, {
+    backgroundColor: null,
+    scale: 2
+  });
+
+  canvas.toBlob(async blob => {
+    const file = new File([blob], "progress.png", { type: "image/png" });
+
+    // Mobile / moderne Browser
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: "Mein Fortschritt",
+        text: "Aktueller Stand"
+      });
+    } else {
+      // Fallback: Download
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "progress.png";
+      a.click();
+    }
+  });
+};
