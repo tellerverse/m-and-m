@@ -123,26 +123,28 @@ document.getElementById("shareBtn").onclick = async () => {
 
   // Wrapper nur für Screenshot
   const wrapper = document.createElement("div");
-  wrapper.style.position = "fixed";
-  wrapper.style.inset = "0";
-  wrapper.style.display = "flex";
-  wrapper.style.flexDirection = "column";
-  wrapper.style.justifyContent = "center";
-  wrapper.style.alignItems = "center";
+  wrapper.style.display = "inline-block";
   wrapper.style.background = "#0f0f14";
-  wrapper.style.zIndex = "-1";
+  wrapper.style.padding = "10px"; // kleiner Padding oben/unten
+  wrapper.style.borderRadius = "12px";
+  wrapper.style.textAlign = "center";
 
   // Klone
   const barClone = progressBar.cloneNode(true);
   const textClone = progressText.cloneNode(true);
 
-  barClone.style.width = "80%";
-  barClone.style.marginTop = "16px";
+  // Schrift kleiner
+  textClone.style.fontSize = "2.5rem";
+  textClone.style.margin = "8px 0";
 
-  textClone.style.fontSize = "4rem";
-  textClone.style.marginBottom = "20px";
+  // Progressbar größe passend
+  barClone.style.width = "300px"; // optional anpassen
+  barClone.style.height = "16px";
+  barClone.style.margin = "0 auto";
 
-  wrapper.append(textClone, barClone);
+  wrapper.appendChild(textClone);
+  wrapper.appendChild(barClone);
+
   document.body.appendChild(wrapper);
 
   const canvas = await html2canvas(wrapper, {
