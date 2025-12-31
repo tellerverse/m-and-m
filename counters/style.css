@@ -172,3 +172,53 @@ h1 {
     border-radius: 14px;
   }
 }
+.stats strong {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.stats span {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.2;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttons button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* Formular */
+.form {
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.form h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.form input,
+.form button {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.form input {
+  margin-bottom: 10px;
+}
+
+.form button {
+  margin-bottom: 6px;
+}
