@@ -176,3 +176,39 @@ document.getElementById("shareBtn").onclick = async () => {
     }
   });
 };
+
+const saveBtn = document.getElementById("saveEntry");
+const fStart = document.getElementById("fStart");
+const fEnd = document.getElementById("fEnd");
+const fCaption = document.getElementById("fCaption");
+const fColor = document.getElementById("fColor");
+
+saveBtn.onclick = async () => {
+  const start = fStart.value;
+  const end = fEnd.value;
+  const caption = fCaption.value;
+  const color = fColor.value;
+
+  if (!start || !end || !caption || !color) {
+    alert("Bitte alle Felder ausfüllen!");
+    return;
+  }
+
+  try {
+    await set(ref(db, `dates/${viewKey}`), {
+      start,
+      end,
+      caption,
+      color
+    });
+
+    // Overlay schließen
+    overlay.classList.add("hidden");
+
+    // Auf die View-Seite weiterleiten
+    window.location.href = `index.html?view=${viewKey}`;
+  } catch (err) {
+    console.error("Fehler beim Speichern:", err);
+    alert("Fehler beim Speichern!");
+  }
+};
