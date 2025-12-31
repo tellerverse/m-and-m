@@ -48,6 +48,7 @@ h1 {
 
 #progressText {
   text-align: center;
+  text-width: bold;
   margin: 8px 0 20px;
 }
 
